@@ -6,9 +6,9 @@ pipeline {
     environment{
         SONAR_HOME = tool "Sonar" // Using the Sonar tool for code scanning
     }
-    
+    // When we will run the build so it will ask user to enter tags. it will show two input boxes
     parameters {
-        string(name: 'FRONTEND_DOCKER_TAG', defaultValue: '', description: 'Setting docker image for latest push')  // User will pass frontend image tag. it is taking that tag
+        string(name: 'FRONTEND_DOCKER_TAG', defaultValue: '', description: 'Setting docker image for latest push')  
         string(name: 'BACKEND_DOCKER_TAG', defaultValue: '', description: 'Setting docker image for latest push')
     }
     
