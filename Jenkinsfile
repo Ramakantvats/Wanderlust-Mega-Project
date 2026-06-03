@@ -119,9 +119,9 @@ pipeline {
         }
     }
     post{
-        success{
+        success{ // if this pipeline executed successfully so it will store artiface.
             archiveArtifacts artifacts: '*.xml', followSymlinks: false
-            build job: "Wanderlust-CD", parameters: [
+            build job: "Wanderlust-CD", parameters: [  // Then, it will trigger new jenkins job named (Wanderlust-CD) a continuous delivery job
                 string(name: 'FRONTEND_DOCKER_TAG', value: "${params.FRONTEND_DOCKER_TAG}"),
                 string(name: 'BACKEND_DOCKER_TAG', value: "${params.BACKEND_DOCKER_TAG}")
             ]
