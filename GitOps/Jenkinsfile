@@ -75,6 +75,7 @@ pipeline {
             }
         }
     }
+//If pipeline got success or fail then in both cases it will send email
   post {
         success {
             script {
