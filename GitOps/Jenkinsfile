@@ -33,7 +33,7 @@ pipeline {
             }
         }
         
-        //updating the backend.yaml and frontend.yml files on your master node with the docker image tags provided by the user input
+        //updating the backend.yaml and frontend.yml files locally stored on automate(vm) with the docker image tags provided by the user input. 
         stage("Update: Kubernetes manifests"){
             steps{
                 script{
@@ -52,7 +52,7 @@ pipeline {
                 }
             }
         }
-        //Now changes made locally by the above stage. Now pushing those changes into github repo (Wanderlust-Mega-Project)
+        //Now changes made locally by the above stage. Now pushing those changes into github repo (Wanderlust-Mega-Project). So that argoCD can trigger and deploy project.
         stage("Git: Code update and push to GitHub"){
             steps{
                 script{
